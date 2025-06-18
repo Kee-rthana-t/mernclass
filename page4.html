@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sticky Movie Header with Scrollable Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f0f0f0;
+    }
+
+    .movie-box {
+      width: 300px;
+      height: 300px;
+      margin: 20px auto;
+      background-color: #337388;
+      color: white;
+      overflow-y: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .movie-header {
+      position: sticky;
+      top: 0;
+      background-color: #225566;
+      padding: 10px;
+      text-align: center;
+      z-index: 1;
+      border-bottom: 2px solid #fff;
+    }
+
+    .movie-header img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .movie-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .movie-description {
+      padding: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    /* Chatbox Styles */
+    .chatbox {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 250px;
+      height: 300px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    .chat-header {
+      background-color: #337388;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+
+    .chat-input {
+      display: flex;
+      border-top: 1px solid #fdd4d4;
+    }
+    .chat-input input {
+      flex: 1;
+      border: none;
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    .chat-input button {
+      background-color: #6ad7fb;
+      color: white;
+      border: none;
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+
+    .chat-input input:focus {
+      outline: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="movie-box">
+    <div class="movie-header">
+      <img src="image1.jpeg" alt="Inception">
+      <div class="movie-title">VIKRAM</div>
+    </div>
+    <div class="movie-description">
+      Vikram is a 2022 Indian action thriller film directed by Lokesh Kanagaraj, starring Kamal Haasan, Vijay Sethupathi, and Fahadh Faasil. The movie follows a covert operation led by a retired agent, Vikram, as he hunts down a deadly drug cartel. With intense action, layered storytelling, and powerful performances, Vikram connects to the "Lokesh Cinematic Universe" and delivers a gripping cinematic experience.
+    </div>
+  </div>
+
+  <div class="movie-box">
+    <div class="movie-header">
+      <img src="image2.jpeg" alt="The Matrix">
+      <div class="movie-title">LOVER</div>
+    </div>
+    <div class="movie-description">
+      Lover is a 2024 Tamil romantic drama film directed by Prabhuram Vyas, starring Manikandan and Sri Gouri Priya. The story explores the complexities of a modern-day relationship, portraying the emotional highs and lows between a couple dealing with misunderstandings, love, and heartbreak. With realistic storytelling and strong performances, Lover offers a raw and heartfelt look at love in today's world.
+    </div>
+  </div>
+
+  <div class="movie-box">
+    <div class="movie-header">
+      <img src="image3.jpeg" alt="Interstellar">
+      <div class="movie-title">24</div>
+    </div>
+    <div class="movie-description">
+      24 is a 2016 Tamil science fiction thriller directed by Vikram Kumar and stars Suriya in a triple role. The story revolves around a time-traveling watch invented by a scientist named Sethuraman. His evil twin brother Athreya tries to steal the watch for his own gain. Years later, Sethuraman’s son Mani discovers the watch and uncovers its secrets. The film blends action, emotion, and sci-fi with stunning visuals and powerful performances.
+    </div>
+  </div>
+
+  <div class="movie-box">
+    <div class="movie-header">
+      <img src="image4.jpeg" alt="The Dark Knight">
+      <div class="movie-title">3</div>
+    </div>
+    <div class="movie-description">
+      3 is a 2012 Tamil romantic psychological thriller directed by Aishwarya R. Dhanush and stars Dhanush and Shruti Haasan. The film follows the love story of Ram and Janani, starting from their school days to married life. As the story unfolds, it takes a dark turn, revealing Ram's struggle with bipolar disorder. With emotional depth, soulful music—especially the hit song "Why This Kolaveri Di"—and strong performances, 3 is a poignant portrayal of love, mental health, and tragedy.
+    </div>
+  </div>
+
+  <div class="movie-box">
+    <div class="movie-header">
+      <img src="image5.jpeg" alt="Avengers: Endgame">
+      <div class="movie-title">DON</div>
+    </div>
+    <div class="movie-description">
+      Don (2006), directed by Farhan Akhtar, is a stylish Bollywood action‑thriller starring Shah Rukh Khan in a gripping dual role as ruthless mafia kingpin Don and his look‑alike Vijay. When Don is presumed dead, Vijay is recruited by the police to infiltrate the criminal underworld — but as allegiances blur, a high-stakes game of deception unfolds . With sleek action sequences, an electrifying international soundtrack by Shankar‑Ehsaan‑Loy, and charismatic performances from Khan and Priyanka Chopra as Roma, the film balances glamour with gritty twists
+    </div>
+  </div>
+
+  <div class="movie-box">
+    <div class="movie-header">
+      <img src="image6.jpg" alt="Parasite">
+      <div class="movie-title">PREMAM</div>
+    </div>
+    <div class="movie-description">
+      Premam is a 2015 Malayalam coming-of-age romantic musical that chronicles the life of George (played by Nivin Pauly) as he navigates love through adolescence, college, and adulthood. Directed by Alphonse Puthren, the film is praised for its authentic storytelling, soulful music, and its ability to deeply connect with audiences—running for over 300 days in Tamil Nadu and grossing around ₹73 crore . Its natural cinematography, memorable soundtrack (with Sai Pallavi’s debut performance winning her multiple Best Female Debut awards), and relatable emotional journey have cemented Premam as a cultural touchstone and cult classic in South Indian cinema
+    </div>
+  </div>
+
+</body>
+</html>
+ <!-- Chatbox -->
+  <div class="chatbox">
+    <div class="chat-header">Chat Support</div>
+    <div class="chat-messages">
+      <p><strong>Bot:</strong>Ask questions?</p>
+    </div>
+    <div class="chat-input">
+      <input type="text" placeholder="Type a message...">
+      <button>Send</button>
+    </div>
+  </div>
+
+</body>
+</html>
