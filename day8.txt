@@ -1,0 +1,177 @@
+use KEC
+switched to db KEC
+db.createcollection("user")
+TypeError: db.createcollection is not a function
+db.createCollection("user")
+{ ok: 1 }
+db.user.insertOne({name:"KEERTHANA",email:"keerthana@gmail.com",age:25,department:"EIE"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('685a2634491b48db0ea1d85b')
+}
+db.user.insertMany([{NAME:"KEERTHANA",AGE:19,EMAILID:"keerthanat.23eie@kongu.edu",MOBILE_NO:9487708177,DEPARTMENT:"EIE",YEAR:"THIRD",SECTION:"A"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2c60491b48db0ea1d85c')
+  }
+}
+db.user.insertMany([{NAME:"shruthi",AGE:20,DEPARTMENT:"EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2d20491b48db0ea1d85d')
+  }
+}
+db.user.insertMany([{NAME:"GOPIKA",AGE:20,DEPARTMENT:"EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2d52491b48db0ea1d85e')
+  }
+}
+db.user.insertMany({NAME:"Nithi",AGE:20,DEPARTMENT:"CSD"})
+MongoInvalidArgumentError: Argument "docs" must be an array of documents
+db.user.insertMany([{NAME:"Nithi",AGE:20,DEPARTMENT:"CSD"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2db9491b48db0ea1d85f')
+  }
+}
+db.user.insertMany([{NAME:"Lathika",AGE:20,DEPARTMENT:"EIE"},{NAME:"Harshini",AGE:20,DEPARTMENT:"EIE"},{NAME:"Nithi",AGE:20,DEPARTMENT:"CSD"},{NAME:"Priya",AGE:20,DEPARTMENT:"CIVIL"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2e93491b48db0ea1d860'),
+    '1': ObjectId('685a2e93491b48db0ea1d861'),
+    '2': ObjectId('685a2e93491b48db0ea1d862'),
+    '3': ObjectId('685a2e93491b48db0ea1d863')
+  }
+}
+db.user.find()
+{
+  _id: ObjectId('685a2634491b48db0ea1d85b'),
+  name: 'KEERTHANA',
+  email: 'keerthana@gmail.com',
+  age: 25,
+  department: 'EIE'
+}
+{
+  _id: ObjectId('685a2c60491b48db0ea1d85c'),
+  NAME: 'KEERTHANA',
+  AGE: 19,
+  EMAILID: 'keerthanat.23eie@kongu.edu',
+  MOBILE_NO: 9487708177,
+  DEPARTMENT: 'EIE',
+  YEAR: 'THIRD',
+  SECTION: 'A'
+}
+{
+  _id: ObjectId('685a2d20491b48db0ea1d85d'),
+  NAME: 'shruthi',
+  AGE: 20,
+  DEPARTMENT: 'EIE'
+}
+{
+  _id: ObjectId('685a2d52491b48db0ea1d85e'),
+  NAME: 'GOPIKA',
+  AGE: 20,
+  DEPARTMENT: 'EIE'
+}
+{
+  _id: ObjectId('685a2db9491b48db0ea1d85f'),
+  NAME: 'Nithi',
+  AGE: 20,
+  DEPARTMENT: 'CSD'
+}
+{
+  _id: ObjectId('685a2e93491b48db0ea1d860'),
+  NAME: 'Lathika',
+  AGE: 20,
+  DEPARTMENT: 'EIE'
+}
+{
+  _id: ObjectId('685a2e93491b48db0ea1d861'),
+  NAME: 'Harshini',
+  AGE: 20,
+  DEPARTMENT: 'EIE'
+}
+{
+  _id: ObjectId('685a2e93491b48db0ea1d862'),
+  NAME: 'Nithi',
+  AGE: 20,
+  DEPARTMENT: 'CSD'
+}
+{
+  _id: ObjectId('685a2e93491b48db0ea1d863'),
+  NAME: 'Priya',
+  AGE: 20,
+  DEPARTMENT: 'CIVIL'
+}
+db.user.findOne()
+{
+  _id: ObjectId('685a2634491b48db0ea1d85b'),
+  name: 'KEERTHANA',
+  email: 'keerthana@gmail.com',
+  age: 25,
+  department: 'EIE'
+}
+db.user.find({NAME:"KEERTHANA"})
+{
+  _id: ObjectId('685a2c60491b48db0ea1d85c'),
+  NAME: 'KEERTHANA',
+  AGE: 19,
+  EMAILID: 'keerthanat.23eie@kongu.edu',
+  MOBILE_NO: 9487708177,
+  DEPARTMENT: 'EIE',
+  YEAR: 'THIRD',
+  SECTION: 'A'
+}
+db.user.find({AGE:20})
+{
+  _id: ObjectId('685a2d20491b48db0ea1d85d'),
+  NAME: 'shruthi',
+  AGE: 20,
+  DEPARTMENT: 'EIE'
+}
+{
+  _id: ObjectId('685a2d52491b48db0ea1d85e'),
+  NAME: 'GOPIKA',
+  AGE: 20,
+  DEPARTMENT: 'EIE'
+}
+{
+  _id: ObjectId('685a2db9491b48db0ea1d85f'),
+  NAME: 'Nithi',
+  AGE: 20,
+  DEPARTMENT: 'CSD'
+}
+{
+  _id: ObjectId('685a2e93491b48db0ea1d860'),
+  NAME: 'Lathika',
+  AGE: 20,
+  DEPARTMENT: 'EIE'
+}
+{
+  _id: ObjectId('685a2e93491b48db0ea1d861'),
+  NAME: 'Harshini',
+  AGE: 20,
+  DEPARTMENT: 'EIE'
+}
+{
+  _id: ObjectId('685a2e93491b48db0ea1d862'),
+  NAME: 'Nithi',
+  AGE: 20,
+  DEPARTMENT: 'CSD'
+}
+{
+  _id: ObjectId('685a2e93491b48db0ea1d863'),
+  NAME: 'Priya',
+  AGE: 20,
+  DEPARTMENT: 'CIVIL'
+}
+db.Collection.updateOne({NAME:KEERTHANA},{NAME:Keerthana})
+ReferenceError: KEERTHANA is not defined
+KEC
+
